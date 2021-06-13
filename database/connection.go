@@ -19,4 +19,5 @@ func Connect() {
 
 	conn.AutoMigrate(&models.User{})
 	conn.AutoMigrate(&models.Student{})
+	conn.AutoMigrate(&models.Subject{})
 }

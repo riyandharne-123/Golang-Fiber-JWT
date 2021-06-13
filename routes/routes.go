@@ -25,4 +25,8 @@ func Setup(app *fiber.App) {
 	app.Get("/students/:id", controllers.GetStudent)
 	app.Put("/students/update/:id", controllers.UpdateStudent)
 	app.Delete("/students/delete/:id", controllers.DeleteStudent)
+
+	//subject Crud
+	app.Post("/subjects/create", controllers.CreateSubject)
+	app.Delete("/subjects/delete/:id", controllers.DeleteSubject)
 }
