@@ -16,5 +16,13 @@ func Setup(app *fiber.App) {
 	app.Use(jwtware.New(jwtware.Config{
 		SigningKey: []byte("secret"),
 	}))
+
 	app.Get("/user", controllers.User)
+
+	//student Crud
+	app.Get("/students", controllers.GetStudents)
+	app.Post("/students/create", controllers.CreateStudent)
+	app.Get("/students/:id", controllers.GetStudent)
+	app.Put("/students/update/:id", controllers.UpdateStudent)
+	app.Delete("/students/delete/:id", controllers.DeleteStudent)
 }

@@ -18,4 +18,5 @@ func Connect() {
 	DB = conn
 
 	conn.AutoMigrate(&models.User{})
+	conn.AutoMigrate(&models.Student{})
 }
