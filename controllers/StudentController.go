@@ -29,7 +29,7 @@ func GetStudents(c *fiber.Ctx) error {
 
 	var students []models.Student
 
-	database.DB.Find(&students)
+	database.DB.Preload("Subjects").Find(&students)
 
 	return c.JSON(students)
 }

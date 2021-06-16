@@ -25,6 +25,15 @@ func CreateSubject(c *fiber.Ctx) error {
 
 }
 
+func GetSubjects(c *fiber.Ctx) error {
+
+	var subjects []models.Subject
+
+	database.DB.Find(&subjects)
+
+	return c.JSON(subjects)
+}
+
 func DeleteSubject(c *fiber.Ctx) error {
 
 	var subject models.Subject
